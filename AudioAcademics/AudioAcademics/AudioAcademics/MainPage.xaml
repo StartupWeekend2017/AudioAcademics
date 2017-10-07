@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AudioAcademics"
+             x:Class="AudioAcademics.MainPage">
+
+    <StackLayout x:Name="JournalStack" VerticalOptions="Center">
+        <Image Source="http://via.placeholder.com/300x300"></Image>
+        <Label Text="Welcome to Audio Articles!" HorizontalOptions="Center"/>
+        <Button Text="Log In" Clicked="Login_onClick"></Button>
+    </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AudibleAcademics.ArticlePlayPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Article Title" />
+            <ProgressBar x:Name="ArticleProgressBar"></ProgressBar>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Stop" Clicked="Stop_OnClicked"></Button>
+                <Button Text="Play" Clicked="Start_OnClicked"></Button>
+            </StackLayout>
+            <Label Text="Article Contents"></Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
