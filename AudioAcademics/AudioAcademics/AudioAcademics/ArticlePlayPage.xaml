@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AudibleAcademics.ArticlePlayPage">
+             x:Class="AudioAcademics.ArticlePlayPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Article Title" />
+            <Label Text="Article Title" x:Name="ArticleTitle"/>
             <ProgressBar x:Name="ArticleProgressBar"></ProgressBar>
             <StackLayout Orientation="Horizontal">
-                <Button Text="Stop" Clicked="Stop_OnClicked"></Button>
-                <Button Text="Play" Clicked="Start_OnClicked"></Button>
+                <Button Text="Stop" Clicked="Pause_OnClicked"></Button>
+                <Button Text="Play" Clicked="Play_OnClicked"></Button>
             </StackLayout>
-            <Label Text="Article Contents"></Label>
+            <Label Text="Article Contents" x:Name="ArticleContents"></Label>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
