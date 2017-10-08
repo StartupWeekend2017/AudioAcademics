@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using Plugin.Iconize.Fonts;
 using UIKit;
 
 namespace AudioAcademics.iOS
@@ -22,7 +23,12 @@ namespace AudioAcademics.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            Plugin.Iconize.Iconize.With(new FontAwesomeModule());
+
             global::Xamarin.Forms.Forms.Init();
+
+            FormsPlugin.Iconize.iOS.IconControls.Init();
+
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

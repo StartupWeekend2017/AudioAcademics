@@ -2,19 +2,20 @@
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:iconize="clr-namespace:FormsPlugin.Iconize;assembly=FormsPlugin.Iconize"
              x:Class="AudioAcademics.ArticlePlayPage">
     <ContentPage.Content>
         <AbsoluteLayout>
             <Grid AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="5*" />
                     <RowDefinition Height="8*" />
-                    <RowDefinition Height="3*" />
+                    <RowDefinition Height="13*" />
+                    <RowDefinition Height="4*" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                
+
                 <AbsoluteLayout x:Name="ImageLayout" HorizontalOptions="FillAndExpand" Grid.Row="0">
                     <BoxView Color="Black" AnchorX="0" AnchorY="0" x:Name="ImageBox"
                              AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="SizeProportional" />
@@ -24,23 +25,52 @@
                         AbsoluteLayout.LayoutFlags="All"
                         x:Name="ArticleImage" />
                 </AbsoluteLayout>
-                <StackLayout Grid.Row="1">
+                <StackLayout Grid.Row="1" Margin="20, 0">
                     <Label Text="Article Title" x:Name="ArticleTitle"
                            HorizontalOptions="Center"
-                           HorizontalTextAlignment="Center" />
+                           HorizontalTextAlignment="Center"
+                           FontFamily="" />
                     <Label Text="Article Author" x:Name="ArticleAuthor"
                            HorizontalOptions="Center"
                            FontAttributes="Italic"
                            HorizontalTextAlignment="Center" />
-                    <Label Text="Article Contents"
-                           x:Name="ArticleContents" />
+                    <ScrollView>
+                        <Label Text="Article Contents"
+                               x:Name="ArticleContents" />
+                    </ScrollView>
                 </StackLayout>
-                <StackLayout Grid.Row="2"> 
-                    <ProgressBar x:Name="ArticleProgressBar" />
-                    <StackLayout Orientation="Horizontal">
-                        <Button Text="Stop" Clicked="Pause_OnClicked" />
-                        <Button Text="Play" Clicked="Play_OnClicked" />
+                <StackLayout Grid.Row="2">
+                    <StackLayout HeightRequest="4">
+                        <ProgressBar x:Name="ArticleProgressBar" VerticalOptions="EndAndExpand" Margin="0,0,0,0" />
                     </StackLayout>
+                    <Grid BackgroundColor="#3C6CA6" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="0" Margin="0" ColumnSpacing="0" RowSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <iconize:IconButton Grid.Column="0" Text="fa-thumbs-up" Rotation="180" FontSize="24"
+                                            TextColor="GhostWhite"
+                                            BorderColor="Transparent" BackgroundColor="Transparent" 
+                                            HorizontalOptions="Center" Margin="0" />
+                        <iconize:IconButton Grid.Column="1" Text="fa-step-backward" FontSize="24"
+                                            TextColor="GhostWhite"
+                                            BorderColor="Transparent" BackgroundColor="Transparent" Margin="0"  />
+                        <iconize:IconButton Grid.Column="2" Text="fa-play-circle" FontSize="50" TextColor="#F76366"
+                                            BorderColor="Transparent" BackgroundColor="Transparent" HorizontalOptions="Center" VerticalOptions="FillAndExpand"
+                                            Margin="0"/>
+                        <iconize:IconButton Grid.Column="3" Text="fa-step-forward" FontSize="24" TextColor="GhostWhite"
+                                            BorderColor="Transparent" BackgroundColor="Transparent"
+                                            Margin="0"/>
+                        <iconize:IconButton Grid.Column="4" Text="fa-thumbs-down" FontSize="24" TextColor="GhostWhite"
+                                            BorderColor="Transparent" BackgroundColor="Transparent"
+                                            Margin="0" />
+                    </Grid>
                 </StackLayout>
             </Grid>
         </AbsoluteLayout>
