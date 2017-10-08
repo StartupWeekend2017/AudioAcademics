@@ -24,7 +24,15 @@ namespace AudioAcademics
             _article = article;
             ArticleTitle.Text = article.Title;
             ArticleContents.Text = article.Contents;
+            ArticleAuthor.Text = article.Author;
+            if (Uri.IsWellFormedUriString(article.ImageUrl, UriKind.Absolute))
+            {
+                //ArticleImage.Source = ImageSource.FromUri(new Uri(article.ImageUrl));
+                //AbsoluteLayout.SetLayoutBounds(ArticleImage, new Rectangle(0.5, 0.5, 1, 1));
+            }
+            ImageLayout.HeightRequest = ArticleImage.Height;
 
+            // Play then stop doesn't work....
             PlaybackController.Play(article.AudioUrl);
             PlaybackController.PlaybackController.Stop();
 
